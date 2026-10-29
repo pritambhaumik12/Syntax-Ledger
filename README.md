@@ -88,7 +88,7 @@ Traditional compilers often emit cryptic, cascade-heavy diagnostics that overwhe
                                   ▼
          ┌──────────────────────────────────────────────────┐
          │              Static Inspection Only              │
-         │  • Python:   compile(source, 'exec') (AST only)   │
+         │  • Python:   compile(source, 'exec') (AST only)  │
          │  • C:        gcc -fsyntax-only -std=c11          │
          │  • Java:     javac -proc:none -Xlint:none        │
          │  • Node.js:  node --check                        │
