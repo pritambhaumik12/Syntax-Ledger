@@ -1,0 +1,106 @@
+# ==============================================================================
+# Environment Variables, Secrets & API Keys (Security Hardening)
+# ==============================================================================
+.env
+.env.*
+!.env.example
+!.env.template
+*.env
+*.key
+*.pem
+*.cert
+*.crt
+*.pfx
+*.p12
+secrets/
+credentials.json
+token.json
+client_secret*.json
+auth*.json
+id_rsa*
+*.pub
+
+# ==============================================================================
+# Python Artifacts & Caches
+# ==============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ==============================================================================
+# Virtual Environments
+# ==============================================================================
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# ==============================================================================
+# Testing, Coverage & Linters
+# ==============================================================================
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+.mypy_cache/
+.ruff_cache/
+
+# ==============================================================================
+# IDE & Editor Artifacts
+# ==============================================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+
+# ==============================================================================
+# Operating System Files
+# ==============================================================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ==============================================================================
+# Compiled Binaries & Temporary Compiler Scratch
+# ==============================================================================
+*.o
+*.obj
+*.class
+*.exe
+*.out
+*.app
+*.log
+*.tmp
+*.temp

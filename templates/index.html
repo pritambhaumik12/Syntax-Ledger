@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="An educational C, Python, Java, and JavaScript error detector with correction suggestions." />
+    <title>Syntax Ledger — Multi-Language Error Detector</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#workbench" aria-label="Syntax Ledger home">
+          <span class="brand-mark" aria-hidden="true"><i></i><b></b></span>
+          <span class="brand-type"><strong>Syntax Ledger</strong><small>multi-language diagnostic ledger</small></span>
+        </a>
+        <div class="topbar-note"><span class="pulse-dot"></span> Compiler design study tool</div>
+      </header>
+
+      <section class="intro" aria-labelledby="page-title">
+        <div class="intro-rule"></div>
+        <p class="eyebrow">EDUCATIONAL DIAGNOSTIC LEDGER / FOUR LANGUAGES</p>
+        <h1 id="page-title">Trace the fault,<br /><em>then understand the fix.</em></h1>
+        <p class="intro-copy">A multi-language diagnostic ledger for C, Python, Java, and JavaScript. Review each line like an annotated source listing, with plain-language explanations and correction suggestions.</p>
+        <div class="scope-note"><span>01</span> Educational diagnostics only — submitted code is never executed.</div>
+      </section>
+
+      <section class="workbench" id="workbench" aria-label="C source code workbench">
+        <div class="workbench-heading">
+          <div>
+            <p class="eyebrow">SOURCE LISTING</p>
+            <h2>Your program</h2>
+          </div>
+          <div class="source-actions">
+            <label class="language-control" for="language-select"><span>Language</span><select id="language-select" aria-label="Programming language"><option value="c">C</option><option value="python">Python</option><option value="java">Java</option><option value="javascript">JavaScript</option></select></label>
+            <button class="text-button" id="copy-button" type="button">Copy listing</button>
+            <button class="text-button" id="clear-button" type="button">Clear listing</button>
+            <button class="analyze-button" id="analyze-button" type="button"><span>Trace &amp; review</span><b>↗</b></button>
+          </div>
+        </div>
+
+        <div class="review-grid">
+          <section class="source-panel" aria-label="C source editor">
+            <div class="panel-meta"><span><i class="file-dot"></i> <b id="source-file">untitled.c</b></span><span id="source-count">0 lines</span></div>
+            <div class="editor-shell">
+              <div class="line-rail" id="line-rail" aria-hidden="true"></div>
+              <textarea id="source-code" spellcheck="false" aria-label="C source code"></textarea>
+            </div>
+            <div class="editor-footer"><i class="proof-dot"></i><span>Trace the fault before applying the fix.</span><kbd>Ctrl</kbd><span>+</span><kbd>Enter</kbd></div>
+          </section>
+
+          <aside class="diagnostic-panel" aria-label="Compiler diagnostics">
+            <div class="diagnostic-heading">
+              <div><p class="eyebrow">ANNOTATION MARGIN</p><h2>Review findings</h2></div>
+              <div class="stamp" id="review-stamp">AWAITING<br />ANALYSIS</div>
+            </div>
+            <div class="summary" id="summary" aria-live="polite">
+              <span><b>0</b> errors</span><span><b>0</b> warnings</span>
+            </div>
+            <div class="diagnostic-list" id="diagnostic-list">
+              <div class="empty-state"><div class="empty-mark">?</div><h3>Nothing has been reviewed yet.</h3><p>Run a source review to place line-linked annotations here.</p></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="examples" aria-labelledby="examples-title">
+        <div class="examples-heading"><p class="eyebrow">GUIDED STARTS / PROOF SETS</p><h2 id="examples-title">Open a specimen</h2><p>Each listing carries one marked teaching moment.</p></div>
+        <div class="example-list">
+          <button class="example-card" data-example="syntax" type="button"><span class="example-number">01</span><strong>Syntax trail</strong><small id="syntax-caption">Trace a missing mark and closing brace</small><b>Open annotation →</b></button>
+          <button class="example-card" data-example="input" type="button"><span class="example-number">02</span><strong>Input trail</strong><small id="input-caption">Follow the address operator into <code>scanf</code></small><b>Open annotation →</b></button>
+          <button class="example-card" data-example="condition" type="button"><span class="example-number">03</span><strong>Condition trail</strong><small id="condition-caption">Separate assignment from comparison</small><b>Open annotation →</b></button>
+        </div>
+      </section>
+
+      <section class="method-note" aria-label="Method note">
+        <span class="method-number">NOTE 01</span>
+        <p>Each selected language is reviewed as a marked source listing. The app combines guided source checks with the Python parser, GCC, <code>javac</code>, or <code>node --check</code> when available. Suggestions explain probable corrections, not replace a full compiler or code review.</p>
+      </section>
+
+      <footer><span>Syntax Ledger</span><span>Built for compiler design practice</span><span id="engine-label">Guided heuristics</span></footer>
+    </main>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  </body>
+</html>
